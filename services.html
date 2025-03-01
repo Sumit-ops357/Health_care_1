@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - SmartCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .services-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+        }
+
+        .services-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .service-card {
+            width: 100%;
+            max-width: 350px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: #1e293b;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+            text-align: left;
+            padding: 0;
+        }
+
+        .service-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #475569;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .service-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-heartbeat"></i>
+            <span>SmartCare</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="services-container">
+        <div class="services-content">
+            <h1 class="services-title">Our Medical Services</h1>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Cardiology</h3>
+                    <p>Expert heart care with state-of-the-art facilities</p>
+                    <ul>
+                        <li>Heart Disease Treatment</li>
+                        <li>ECG & Echo Tests</li>
+                        <li>Cardiac Surgery</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Neurology</h3>
+                    <p>Comprehensive neurological care</p>
+                    <ul>
+                        <li>Brain & Spine Treatment</li>
+                        <li>Neurological Disorders</li>
+                        <li>Stroke Management</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-bone"></i>
+                    <h3>Orthopedics</h3>
+                    <p>Complete bone and joint care</p>
+                    <ul>
+                        <li>Joint Replacement</li>
+                        <li>Sports Injuries</li>
+                        <li>Physiotherapy</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>General Medicine</h3>
+                    <p>Primary healthcare services</p>
+                    <ul>
+                        <li>Regular Check-ups</li>
+                        <li>Vaccinations</li>
+                        <li>Health Screenings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

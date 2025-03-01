@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCare Appointment System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-heartbeat"></i>
+            <span>SmartCare</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Services</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to SmartCare</h1>
+            <p>Your Health, Our Priority</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="appointment-section">
+                <h2><i class="fas fa-calendar-check"></i> Book Your Appointment</h2>
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="patientName">Patient Name:</label>
+                        <input type="text" id="patientName" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" required placeholder="(123) 456-7890">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="doctor">Select Doctor:</label>
+                        <select id="doctor" required>
+                            <option value="">Choose a doctor</option>
+                            <option value="Dr. Smith">Dr. Smith - Cardiologist</option>
+                            <option value="Dr. Johnson">Dr. Johnson - Pediatrician</option>
+                            <option value="Dr. Davis">Dr. Davis - Dermatologist</option>
+                            <option value="Dr. Wilson">Dr. Wilson - Neurologist</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentTime">Preferred Time:</label>
+                        <input type="datetime-local" id="appointmentTime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="symptoms">Symptoms:</label>
+                        <textarea id="symptoms" rows="3" placeholder="Describe your symptoms"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-check-circle"></i> Book Appointment
+                    </button>
+                </form>
+            </div>
+            
+            <div id="queueStatus" class="hidden">
+                <h2><i class="fas fa-user-clock"></i> Queue Status</h2>
+                <div class="queue-info">
+                    <p>Your current position: <span id="queuePosition" class="highlight"></span></p>
+                    <p>Estimated waiting time: <span id="waitingTime" class="highlight"></span> minutes</p>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="queueProgress"></div>
+                </div>
+            </div>
+            
+            <div id="videoCallSection" class="hidden">
+                <h2><i class="fas fa-video"></i> Telemedicine Call</h2>
+                <p>Your doctor is ready to see you now!</p>
+                <button id="videoCallBtn" class="btn-success">
+                    <i class="fas fa-video"></i> Join Video Call
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@smartcare.com</p>
+                <p><i class="fas fa-location-dot"></i> 123 Medical Center Dr.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Emergency</h3>
+                <p class="emergency-number"><i class="fas fa-phone"></i> 911</p>
+                <p>Available 24/7</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SmartCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <button class="chat-toggle" id="chatToggle" onclick="window.location.href='chat.html'">
+        <i class="fas fa-comments fa-2x"></i>
+    </button>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <div class="chat-title">
+                <i class="fas fa-robot"></i>
+                <span>SmartCare Assistant</span>
+            </div>
+            <div class="chat-controls">
+                <button class="minimize-btn" id="minimizeChat">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="chat-body">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        Hello! 👋 I'm your SmartCare Assistant. How can I help you today?
+                    </div>
+                </div>
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        You can ask me about:
+                        <ul>
+                            <li>Booking appointments</li>
+                            <li>Available doctors</li>
+                            <li>Medical services</li>
+                            <li>Working hours</li>
+                            <li>Emergency services</li>
+                            <li>Insurance coverage</li>
+                            <li>Prescription refills</li>
+                            <li>Lab test results</li>
+                            <li>Vaccination schedules</li>
+                            <li>Telemedicine options</li>
+                            <li>Specialist referrals</li>
+                            <li>Payment options</li>
+                            <li>Hospital locations</li>
+                            <li>Health screenings</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        Our services are available 24/7. For emergencies, please call our hotline or visit the nearest emergency room.
+                    </div>
+                </div>
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        Would you like to:
+                        <ul>
+                            <li>Schedule an appointment?</li>
+                            <li>Speak with a doctor?</li>
+                            <li>Get medical advice?</li>
+                            <li>Check your test results?</li>
+                            <li>Refill a prescription?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
